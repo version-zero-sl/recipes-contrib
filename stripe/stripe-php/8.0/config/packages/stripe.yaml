@@ -1,0 +1,10 @@
+parameters:
+  env(STRIPE_PUBLIC_KEY): ''
+  env(STRIPE_SECRET_KEY): ''
+
+services:
+
+  Stripe\StripeClient:
+    class: 'Stripe\StripeClient'
+    arguments:
+      - '%env(STRIPE_SECRET_KEY)%'
